@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+// Responsive Breakpoint
+$bp-large: 60em;        //960px
+$bp-medium: 45em;       //720px
+$bp-small: 35em;        //512x
+$bp-smallest: 28em;     //448px
+
+body {
+    background-image: url(assets/polo-bg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    // Adding dark overlay 
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .3);
+    }
+
+    * {
+        z-index: 1;
+    }
+}
+
+.year {
+    width: 100%;
+    font-size: 80px;
+    z-index: -1;
+    opacity: .8;
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media only screen and (max-width: $bp-large){
+        bottom: 30%;
+        font-size: 65px;
+    }
+
+    @media only screen and (max-width: $bp-medium){
+        font-size: 55px;
+    }
+
+    @media only screen and (max-width: $bp-small){
+        bottom: 35%;
+        font-size: 45px;
+    }
+
+    @media only screen and (max-width: $bp-smallest){
+        font-size: 40px;
+    }
+}
+
+h1 {
+    font-size: 55px;
+    margin: -100px 0 40px;
+
+    @media only screen and (max-width: $bp-medium){
+        font-size: 45px;
+    }
+
+    @media only screen and (max-width: $bp-small){
+        font-size: 35px;
+    }
+
+    @media only screen and (max-width: $bp-smallest){
+        font-size: 25px;
+    }
+}
+
+.countdown {
+    // display: flex;
+    display: none;
+    transform: scale(2);
+
+    .time {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 15px;
+
+        @media only screen and (max-width: $bp-medium){
+            margin: 10px;
+        }
+
+        @media only screen and (max-width: $bp-small){
+            margin: 5px;
+        }
+    
+
+        h2 {
+            margin: 0 0 5px;
+
+            @media only screen and (max-width: $bp-medium){
+                font-size: 18px;
+            }        
+
+            @media only screen and (max-width: $bp-small){
+                font-size: 12px;
+                margin: 0;
+            }     
+            
+            @media only screen and (max-width: $bp-smallest){
+                font-size: 8px;
+                margin: 0;
+            }
+        }
+
+        small {
+            @media only screen and (max-width: $bp-small){
+                font-size: 15px;
+            } 
+
+            @media only screen and (max-width: $bp-small){
+                font-size: 10px;
+            }  
+            
+            @media only screen and (max-width: $bp-smallest){
+                font-size: 8px;
+            }
+        }
+    }
+}
