@@ -24,12 +24,26 @@ body {
   text-align: center;
 }
 
+.container {
+  margin: 50px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
 @media only screen and (max-width: 60em) {
-  body {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .container {
+    margin: 0;
+    gap: 0;
+  }
+}
+
+@media only screen and (max-width: 45em) {
+  .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 
