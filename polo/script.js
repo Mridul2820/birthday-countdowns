@@ -23,6 +23,11 @@ const birthdayTime = new Date(`${birthDate} ${currentYear} 00:00:00`);
 // Get the backGround date 
 year.innerText = `January 28 , ${currentYear}` ;
 
+// birthday wish
+if(birthdayTimeCheck.getMonth() == currentTime.getMonth() && birthdayTimeCheck.getDate() == currentTime.getDate() ) {
+    heading.innerHTML = '🎂 Happy Birhday Polo 🎂';
+}
+
 // update the countdown 
 function updateCountdown() {
     const currentTime = new Date();
@@ -43,7 +48,14 @@ function updateCountdown() {
 // Show Spinner after loading 
 setTimeout(() => {
     loading.remove();
-    countdown.style.display = 'flex';
+    
+    if(birthdayTimeCheck.getMonth() == currentTime.getMonth() && birthdayTimeCheck.getDate() == currentTime.getDate() ) {
+        countdown.style.display = 'none';
+    }
+    else {
+        countdown.style.display = 'flex';
+    }
+
 }, 1000)
 
 // Run Every Second 

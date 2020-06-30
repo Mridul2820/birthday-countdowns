@@ -1,4 +1,5 @@
 const lang = navigator.language;
+const countdown = document.getElementById('countdown');
 
 const days = document.getElementById('days');
 const hours = document.getElementById('hours');
@@ -6,6 +7,7 @@ const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
 
 const year = document.getElementById('year');
+const heading = document.getElementById('heading');
 const loading = document.getElementById('loading');
 
 const currentTime = new Date();
@@ -21,6 +23,11 @@ const birthdayTime = new Date(`${birthDate} ${currentYear} 00:00:00`);
 
 // Get the backGround date 
 year.innerText = `March 7 , ${currentYear}` ;
+
+// birthday wish
+if(birthdayTimeCheck.getMonth() == currentTime.getMonth() && birthdayTimeCheck.getDate() == currentTime.getDate() ) {
+    heading.innerHTML = '🎂 Happy Birhday Susu 🎂';
+}
 
 // update the countdown 
 function updateCountdown() {
@@ -42,7 +49,14 @@ function updateCountdown() {
 // Show Spinner after loading 
 setTimeout(() => {
     loading.remove();
-    countdown.style.display = 'flex';
+    
+    if(birthdayTimeCheck.getMonth() == currentTime.getMonth() && birthdayTimeCheck.getDate() == currentTime.getDate() ) {
+        countdown.style.display = 'none';
+    }
+    else {
+        countdown.style.display = 'flex';
+    }
+
 }, 1000)
 
 // Run Every Second 
