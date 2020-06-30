@@ -8,20 +8,13 @@
 }
 
 body {
-  background-image: url(assets/polo-bg.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: 100vh;
+  height: 100%;
   color: #fff;
-  overflow: hidden;
+  overflow-x: hidden;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -31,154 +24,17 @@ body {
   text-align: center;
 }
 
-body::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-body * {
-  z-index: 1;
-}
-
-.year {
-  width: 100%;
-  font-size: 80px;
-  z-index: -1;
-  opacity: .8;
-  position: absolute;
-  bottom: 25%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
 @media only screen and (max-width: 60em) {
-  .year {
-    bottom: 30%;
-    font-size: 65px;
+  body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
-@media only screen and (max-width: 45em) {
-  .year {
-    font-size: 55px;
-  }
-}
-
-@media only screen and (max-width: 35em) {
-  .year {
-    bottom: 35%;
-    font-size: 45px;
-  }
-}
-
-@media only screen and (max-width: 28em) {
-  .year {
-    font-size: 40px;
-  }
-}
-
-h1 {
-  font-size: 55px;
-  margin: -100px 0 40px;
-}
-
-@media only screen and (max-width: 45em) {
-  h1 {
-    font-size: 45px;
-  }
-}
-
-@media only screen and (max-width: 35em) {
-  h1 {
-    font-size: 35px;
-  }
-}
-
-@media only screen and (max-width: 28em) {
-  h1 {
-    font-size: 25px;
-  }
-}
-
-.countdown {
-  display: none;
-  -webkit-transform: scale(2);
-          transform: scale(2);
-}
-
-.countdown .time {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 15px;
-}
-
-@media only screen and (max-width: 45em) {
-  .countdown .time {
-    margin: 10px;
-  }
-}
-
-@media only screen and (max-width: 35em) {
-  .countdown .time {
-    margin: 5px;
-  }
-}
-
-.countdown .time h2 {
-  margin: 0 0 5px;
-}
-
-@media only screen and (max-width: 45em) {
-  .countdown .time h2 {
-    font-size: 18px;
-  }
-}
-
-@media only screen and (max-width: 35em) {
-  .countdown .time h2 {
-    font-size: 12px;
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width: 28em) {
-  .countdown .time h2 {
-    font-size: 8px;
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width: 35em) {
-  .countdown .time small {
-    font-size: 15px;
-  }
-}
-
-@media only screen and (max-width: 35em) {
-  .countdown .time small {
-    font-size: 10px;
-  }
-}
-
-@media only screen and (max-width: 28em) {
-  .countdown .time small {
-    font-size: 8px;
-  }
+iframe {
+  height: 500px;
+  width: 400px;
+  border: none;
 }
