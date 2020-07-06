@@ -11,7 +11,12 @@ const loading = document.getElementById('loading');
 const currentTime = new Date();
 let currentYear = new Date().getFullYear();
 
+const nameId = document.getElementById('name');
+
+const name = 'Polo';
 const birthDate = `January 28`;
+
+nameId.innerText = name;
 
 const birthdayTimeCheck = new Date(`${birthDate} ${currentYear} 00:00:00`);
 
@@ -21,11 +26,11 @@ const birthdayTime = new Date(`${birthDate} ${currentYear} 00:00:00`);
 
 
 // Get the backGround date 
-year.innerText = `January 28 , ${currentYear}` ;
+year.innerText = `${birthDate} , ${currentYear}` ;
 
 // birthday wish
 if(birthdayTimeCheck.getMonth() == currentTime.getMonth() && birthdayTimeCheck.getDate() == currentTime.getDate() ) {
-    heading.innerHTML = '🎂 Happy Birhday Polo 🎂';
+    heading.innerHTML = `🎂 Happy Birhday ${name} 🎂`;
 }
 
 // update the countdown 
