@@ -26,9 +26,6 @@ currentTime > birthdayTimeCheck ? currentYear += 1 : currentYear ;
 
 const birthdayTime = new Date(`${birthDate} ${currentYear} 00:00:00`);
 
-// Get the backGround date 
-year.innerText = `${birthDate} , ${currentYear}` ;
-
 // birthday wish
 if(birthdayTimeCheck.getMonth() == currentTime.getMonth() && birthdayTimeCheck.getDate() == currentTime.getDate() ) {
     heading.innerHTML = `🎂 Happy Birhday ${name} 🎂`;
@@ -57,9 +54,13 @@ setTimeout(() => {
     
     if(birthdayTimeCheck.getMonth() == currentTime.getMonth() && birthdayTimeCheck.getDate() == currentTime.getDate() ) {
         countdown.style.display = 'none';
+        // Get the backGround date 
+        year.innerText = `${birthDate} ` ;
     }
     else {
         countdown.style.display = 'flex';
+        // Get the backGround date 
+        year.innerText = `${birthDate} , ${currentYear}` ;
     }
 
 }, 1000)
